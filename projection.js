@@ -15,11 +15,11 @@ function findProject(db){
     var collection = db.collection('parrots');
     collection.find({
             //Query
-            age: {$gt : parseInt(process.argv[2], 10)}
+            age: {$gt : parseInt(process.argv[2], 10)} //Only greater than the passed age
         },
         {
             //Projection
-            _id: false
+            _id: false //Exxclude _id
         })
     .toArray(function(err,results){
         console.log(results);
